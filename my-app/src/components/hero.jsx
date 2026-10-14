@@ -1,10 +1,10 @@
 import React from 'react';
 
 const heroPanels = [
-  { id: 1, image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800" },
-  { id: 2, image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800" },
-  { id: 3, image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800" },
-  { id: 4, image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=800" },
+  { id: 1, image: "/pic.jpeg" },
+  { id: 2, image: "/pic.jpeg" },
+  { id: 3, image: "/pic.jpeg" },
+  { id: 4, image: "/pic.jpeg" },
 ];
 
 export default function hero() {

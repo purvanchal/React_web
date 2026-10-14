@@ -1,10 +1,10 @@
 import React from 'react';
 
 const products = [
-  { id: 1, name: "Royal Banarasi Silk", price: "₹24,999", image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=600" },
-  { id: 2, name: "Kanjivaram Festive Drape", price: "₹32,500", image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=600" },
-  { id: 3, name: "Embroidered Organza", price: "₹18,200", image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=600" },
-  { id: 4, name: "Designer Party Saree", price: "₹21,000", image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=600" },
+  { id: 1, name: "Royal Banarasi Silk", price: "₹24,999", image: "/pic.jpeg" },
+  { id: 2, name: "Kanjivaram Festive Drape", price: "₹32,500", image: "/pic.jpeg" },
+  { id: 3, name: "Embroidered Organza", price: "₹18,200", image: "/pic.jpeg" },
+  { id: 4, name: "Designer Party Saree", price: "₹21,000", image: "/pic.jpeg" },
 ];
 
 export default function collections() {
