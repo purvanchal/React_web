@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/navbar';
 import Hero from './components/hero';
 import Collections from './components/collections';
+import Centerdisplay from './components/centerDisplay'
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Collections />
+      <Centerdisplay />
     </div>
   );
 }
