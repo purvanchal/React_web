@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className="z-10 flex items-center">
         <a href="#home" className="inline-block">
           <img
-            src="/logoo.png"
+            src="/logo.png"
             alt="Purvanchal Collection Logo"
             className="h-10 md:h-12 w-auto object-contain cursor-pointer drop-shadow-md"
           />
