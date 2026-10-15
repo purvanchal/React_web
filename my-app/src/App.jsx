@@ -6,19 +6,21 @@ import TickerBanner from './components/TickerBanner';
 import AboutSection from './components/AboutSection';
 import WomensCollection from './components/WomensCollection';
 import EditorialBanner from './components/EditorialBanner';
+import FeaturedPieces from './components/FeaturedPieces';
+import WhyUsSection from './components/WhyUsSection';
 import FloatingButtons from './components/FloatingButtons';
 
 export default function App() {
   return (
     <div className="relative min-h-screen bg-[#2D0D12]">
-      {/* 1. Top Bar */}
+      {/* 1. Announcement Strip */}
       <TopAnnouncement />
 
-      {/* 2. Sticky Navigation */}
+      {/* 2. Top Header Navigation */}
       <Navbar />
 
       <main>
-        {/* 3. Hero Lehenga Section */}
+        {/* 3. Hero Section (Bride background + main text) */}
         <HeroSection />
 
         {/* 4. Marquee Strip */}
@@ -30,11 +32,17 @@ export default function App() {
         {/* 6. Women's Collection (Sarees, Suits, Lehengas...) */}
         <WomensCollection />
 
-        {/* 7. Editorial Split Section (Made for Moments That Matter) */}
+        {/* 7. Split Editorial Banner (Made for Moments That Matter) */}
         <EditorialBanner />
+
+        {/* 8. Featured Pieces Catalog with Prices */}
+        <FeaturedPieces />
+
+        {/* 9. Why Purvanchal Collection (01 - 05 Columns) */}
+        <WhyUsSection />
       </main>
 
-      {/* 8. Floating Action Buttons */}
+      {/* 10. Floating WhatsApp and Phone Buttons */}
       <FloatingButtons />
     </div>
   );
