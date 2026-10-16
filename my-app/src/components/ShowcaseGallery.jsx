@@ -53,25 +53,25 @@ const SHOWCASE_PHOTOS = [
 
 export default function ShowcaseGallery() {
   return (
-    <section className="bg-white py-24 px-6 md:px-12 lg:px-16 border-t border-[#EFE8DC]">
+    <section className="bg-[#1E090C] py-24 px-6 md:px-12 lg:px-16 border-t border-[#D8B467]/20">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-[11px] md:text-[12px] uppercase tracking-[0.35em] text-[#B08D46] font-medium">
+          <p className="text-[11px] md:text-[12px] uppercase tracking-[0.35em] text-[#D8B467] font-medium">
             THE SHOWCASE
           </p>
-          <h2 className="font-serif-luxury text-4xl md:text-5xl lg:text-6xl text-[#1E090C] font-normal tracking-tight mt-3">
+          <h2 className="font-serif-luxury text-4xl md:text-5xl lg:text-6xl text-[#FFF8F0] font-normal tracking-tight mt-3">
             Moments in Purvanchal
           </h2>
-          <p className="text-xs md:text-sm text-stone-500 font-normal leading-relaxed mt-4 max-w-xl mx-auto">
+          <p className="text-xs md:text-sm text-[#E5D7CA]/80 font-normal leading-relaxed mt-4 max-w-xl mx-auto">
             Bridal couture, festive drapes and groom's wear from our editorial lens.
           </p>
 
-          <div className="flex items-center justify-center mt-6 space-x-3 text-[#C5A869]">
-            <div className="h-[1px] w-12 bg-[#D8B467]/50" />
+          <div className="flex items-center justify-center mt-6 space-x-3 text-[#D8B467]">
+            <div className="h-[1px] w-12 bg-[#D8B467]/40" />
             <span className="text-[8px]">◆</span>
-            <div className="h-[1px] w-12 bg-[#D8B467]/50" />
+            <div className="h-[1px] w-12 bg-[#D8B467]/40" />
           </div>
         </div>
 
@@ -80,14 +80,14 @@ export default function ShowcaseGallery() {
           {SHOWCASE_PHOTOS.map((photo) => (
             <div
               key={photo.id}
-              className="relative overflow-hidden aspect-[4/5] bg-stone-200 group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500"
+              className="relative overflow-hidden aspect-[4/5] bg-[#2A0D11] border border-[#D8B467]/15 group cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500"
             >
               <img
                 src={photo.src}
                 alt={photo.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-[#1E090C]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
         </div>
