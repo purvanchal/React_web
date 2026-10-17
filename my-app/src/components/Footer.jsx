@@ -3,9 +3,9 @@ import { ArrowRight, Mail, Phone, Clock } from 'lucide-react';
 import logo from '../assets/logo.png';
 
 export default function Footer({ setActivePage }) {
-  const goToEnquiry = () => {
+  const navigateTo = (page) => {
     if (setActivePage) {
-      setActivePage('enquiry');
+      setActivePage(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
@@ -13,7 +13,7 @@ export default function Footer({ setActivePage }) {
   return (
     <footer className="bg-[#2A070D] text-white overflow-hidden relative border-t border-[#3F0E17]">
       
-      {/* 1. Upper CTA Section: "Let's Find Your Perfect Look" */}
+      {/* 1. Upper CTA Section */}
       <div className="py-24 px-6 text-center max-w-4xl mx-auto border-b border-white/10">
         <p className="text-[11px] uppercase tracking-[0.35em] text-[#C5A869] font-medium mb-3">
           BEGIN YOUR JOURNEY
@@ -27,7 +27,7 @@ export default function Footer({ setActivePage }) {
 
         <div className="mt-8 flex justify-center">
           <button
-            onClick={goToEnquiry}
+            onClick={() => navigateTo('enquiry')}
             className="inline-flex items-center space-x-3 bg-[#B89758] hover:bg-[#a68648] text-[#290B10] px-8 py-3.5 text-[11px] font-bold tracking-[0.2em] uppercase transition duration-300 shadow-md group cursor-pointer"
           >
             <span>SEND AN ENQUIRY</span>
@@ -36,7 +36,7 @@ export default function Footer({ setActivePage }) {
         </div>
       </div>
 
-      {/* 2. Main 4-Column Footer Navigation & Addresses */}
+      {/* 2. Main 4-Column Footer */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-left">
         
         {/* Col 1: Brand & Bio */}
@@ -87,7 +87,7 @@ export default function Footer({ setActivePage }) {
             </a>
 
             <a
-              href="https://www.youtube.com/channel/UChC43JoW97cZ0yo25wKiFTA"
+              href="https://youtube.com"
               target="_blank"
               rel="noreferrer"
               className="w-9 h-9 border border-white/20 hover:border-[#C5A869] flex items-center justify-center text-stone-300 hover:text-[#C5A869] transition"
@@ -108,31 +108,34 @@ export default function Footer({ setActivePage }) {
           <ul className="space-y-3 text-xs text-stone-300 font-light">
             <li>
               <button 
-                onClick={() => { setActivePage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="hover:text-white transition flex items-center space-x-2"
+                onClick={() => navigateTo('home')}
+                className="hover:text-white transition flex items-center space-x-2 cursor-pointer"
               >
                 <span>—</span> <span>Home</span>
               </button>
             </li>
             <li>
-              <a href="#about" onClick={() => setActivePage('home')} className="hover:text-white transition flex items-center space-x-2">
+              <button 
+                onClick={() => navigateTo('about')}
+                className="hover:text-white transition flex items-center space-x-2 cursor-pointer"
+              >
                 <span>—</span> <span>About Us</span>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#women" onClick={() => setActivePage('home')} className="hover:text-white transition flex items-center space-x-2">
+              <a href="#women" onClick={() => navigateTo('home')} className="hover:text-white transition flex items-center space-x-2">
                 <span>—</span> <span>Women</span>
               </a>
             </li>
             <li>
-              <a href="#collections" onClick={() => setActivePage('home')} className="hover:text-white transition flex items-center space-x-2">
+              <a href="#collections" onClick={() => navigateTo('home')} className="hover:text-white transition flex items-center space-x-2">
                 <span>—</span> <span>Collections</span>
               </a>
             </li>
             <li>
               <button 
-                onClick={goToEnquiry} 
-                className="hover:text-white transition flex items-center space-x-2"
+                onClick={() => navigateTo('enquiry')} 
+                className="hover:text-white transition flex items-center space-x-2 cursor-pointer"
               >
                 <span>—</span> <span>Contact Us</span>
               </button>

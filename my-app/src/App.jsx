@@ -11,6 +11,7 @@ import ShowcaseGallery from './components/ShowcaseGallery';
 import LightTickerBanner from './components/LightTickerBanner';
 import SocialShowcase from './components/SocialShowcase';
 import Testimonials from './components/Testimonials';
+import AboutPage from './components/AboutPage';
 import EnquiryPage from './components/EnquiryPage';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
@@ -25,7 +26,10 @@ export default function App() {
       <Navbar activePage={activePage} setActivePage={setActivePage} />
 
       <main>
-        {activePage === 'enquiry' ? (
+        {activePage === 'about' ? (
+          /* Dedicated About Us Page */
+          <AboutPage setActivePage={setActivePage} />
+        ) : activePage === 'enquiry' ? (
           /* Dedicated Contact / Enquiry Page */
           <EnquiryPage />
         ) : (
