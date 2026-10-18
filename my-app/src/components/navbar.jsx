@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ChevronDown, Phone } from 'lucide-react';
 import logo from '../assets/logo.png';
 
-export default function Navbar({ activePage, setActivePage }) {
+export default function Navbar({ activePage, setActivePage, setSelectedCategory }) {
+  const [activeDropdown, setActiveDropdown] = useState(null); // 'women' | 'men' | null
+
   const navigateTo = (page) => {
     if (setActivePage) {
       setActivePage(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    setActiveDropdown(null);
+  };
+
+  const handleCategoryClick = (categoryName) => {
+    if (setSelectedCategory) setSelectedCategory(categoryName);
+    if (setActivePage) setActivePage('category');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActiveDropdown(null);
   };
 
   const scrollToSection = (id) => {
     navigateTo('home');
+    setActiveDropdown(null);
     setTimeout(() => {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -19,8 +30,11 @@ export default function Navbar({ activePage, setActivePage }) {
   };
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm sticky top-0 z-40 border-b border-stone-200">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+    <nav 
+      className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-200"
+      onMouseLeave={() => setActiveDropdown(null)}
+    >
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between relative">
         
         {/* Brand / Logo */}
         <div 
@@ -53,11 +67,12 @@ export default function Navbar({ activePage, setActivePage }) {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden lg:flex items-center space-x-8 text-[12px] font-semibold tracking-[0.16em] uppercase text-stone-700">
+        <div className="hidden lg:flex items-center space-x-8 text-[12px] font-semibold tracking-[0.16em] uppercase text-stone-700 h-full">
           <button
             onClick={() => navigateTo('home')}
+            onMouseEnter={() => setActiveDropdown(null)}
             className={`transition uppercase cursor-pointer ${
-              activePage === 'home' ? 'text-[#641824]' : 'hover:text-[#641824]'
+              activePage === 'home' && !activeDropdown ? 'text-[#641824]' : 'hover:text-[#641824]'
             }`}
           >
             Home
@@ -65,6 +80,7 @@ export default function Navbar({ activePage, setActivePage }) {
           
           <button
             onClick={() => navigateTo('about')}
+            onMouseEnter={() => setActiveDropdown(null)}
             className={`transition uppercase cursor-pointer ${
               activePage === 'about' ? 'text-[#641824]' : 'hover:text-[#641824]'
             }`}
@@ -72,74 +88,45 @@ export default function Navbar({ activePage, setActivePage }) {
             About Us
           </button>
 
-          {/* Women Dropdown */}
-          <div className="relative group cursor-pointer flex items-center space-x-1 hover:text-[#641824] transition py-6">
-            <span>Women</span>
-            <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
-            
-            <div className="absolute top-full left-0 hidden group-hover:flex flex-col bg-white shadow-xl border border-stone-200 py-3 w-52 z-50 text-left normal-case">
-              <button 
-                onClick={() => scrollToSection('women')}
-                className="px-5 py-2 hover:bg-[#FAF7F2] text-xs font-medium text-stone-800 hover:text-[#641824] transition text-left cursor-pointer"
-              >
-                Bridal Lehengas
-              </button>
-              <button 
-                onClick={() => scrollToSection('women')}
-                className="px-5 py-2 hover:bg-[#FAF7F2] text-xs font-medium text-stone-800 hover:text-[#641824] transition text-left cursor-pointer"
-              >
-                Banarasi & Silk Sarees
-              </button>
-              <button 
-                onClick={() => scrollToSection('women')}
-                className="px-5 py-2 hover:bg-[#FAF7F2] text-xs font-medium text-stone-800 hover:text-[#641824] transition text-left cursor-pointer"
-              >
-                Festive Anarkalis & Suits
-              </button>
-              <button 
-                onClick={() => scrollToSection('women')}
-                className="px-5 py-2 hover:bg-[#FAF7F2] text-xs font-medium text-stone-800 hover:text-[#641824] transition text-left cursor-pointer"
-              >
-                Reception Gowns
-              </button>
-            </div>
+          {/* Women Dropdown Trigger */}
+          <div 
+            className="h-full flex items-center"
+            onMouseEnter={() => setActiveDropdown('women')}
+          >
+            <button
+              onClick={() => scrollToSection('women')}
+              className={`flex items-center space-x-1 uppercase cursor-pointer transition ${
+                activeDropdown === 'women' ? 'text-[#641824]' : 'hover:text-[#641824]'
+              }`}
+            >
+              <span>Women</span>
+              <ChevronDown className={`w-3.5 h-3.5 opacity-70 transition-transform duration-300 ${
+                activeDropdown === 'women' ? 'rotate-180' : ''
+              }`} />
+            </button>
           </div>
 
-          {/* Men Dropdown */}
-          <div className="relative group cursor-pointer flex items-center space-x-1 hover:text-[#641824] transition py-6">
-            <span>Men</span>
-            <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
-            
-            <div className="absolute top-full left-0 hidden group-hover:flex flex-col bg-white shadow-xl border border-stone-200 py-3 w-52 z-50 text-left normal-case">
-              <button 
-                onClick={() => scrollToSection('featured')}
-                className="px-5 py-2 hover:bg-[#FAF7F2] text-xs font-medium text-stone-800 hover:text-[#641824] transition text-left cursor-pointer"
-              >
-                Groom's Sherwanis
-              </button>
-              <button 
-                onClick={() => scrollToSection('featured')}
-                className="px-5 py-2 hover:bg-[#FAF7F2] text-xs font-medium text-stone-800 hover:text-[#641824] transition text-left cursor-pointer"
-              >
-                Indo-Western Sets
-              </button>
-              <button 
-                onClick={() => scrollToSection('featured')}
-                className="px-5 py-2 hover:bg-[#FAF7F2] text-xs font-medium text-stone-800 hover:text-[#641824] transition text-left cursor-pointer"
-              >
-                Bespoke Bandhgalas
-              </button>
-              <button 
-                onClick={() => scrollToSection('featured')}
-                className="px-5 py-2 hover:bg-[#FAF7F2] text-xs font-medium text-stone-800 hover:text-[#641824] transition text-left cursor-pointer"
-              >
-                Kurta Pajama Sets
-              </button>
-            </div>
+          {/* Men Dropdown Trigger */}
+          <div 
+            className="h-full flex items-center"
+            onMouseEnter={() => setActiveDropdown('men')}
+          >
+            <button
+              onClick={() => scrollToSection('featured')}
+              className={`flex items-center space-x-1 uppercase cursor-pointer transition ${
+                activeDropdown === 'men' ? 'text-[#641824]' : 'hover:text-[#641824]'
+              }`}
+            >
+              <span>Men</span>
+              <ChevronDown className={`w-3.5 h-3.5 opacity-70 transition-transform duration-300 ${
+                activeDropdown === 'men' ? 'rotate-180' : ''
+              }`} />
+            </button>
           </div>
 
           <button
             onClick={() => scrollToSection('collections')}
+            onMouseEnter={() => setActiveDropdown(null)}
             className="hover:text-[#641824] transition uppercase cursor-pointer"
           >
             Collections
@@ -147,6 +134,7 @@ export default function Navbar({ activePage, setActivePage }) {
 
           <button
             onClick={() => navigateTo('enquiry')}
+            onMouseEnter={() => setActiveDropdown(null)}
             className={`transition uppercase cursor-pointer ${
               activePage === 'enquiry' ? 'text-[#641824]' : 'hover:text-[#641824]'
             }`}
@@ -174,6 +162,148 @@ export default function Navbar({ activePage, setActivePage }) {
         </div>
 
       </div>
+
+      {/* =========================================================================
+          FULL-WIDTH MEGA MENU WITH DELICATE TRANSITION EFFECTS
+          ========================================================================= */}
+      {activeDropdown && (
+        <div 
+          className="absolute top-full left-0 w-full bg-[#FAF7F2] border-t border-b border-[#E8DEC9] shadow-[0_25px_50px_rgba(45,13,18,0.12)] py-12 px-6 lg:px-16 transition-all duration-300 transform origin-top animate-dropdown"
+          onMouseEnter={() => setActiveDropdown(activeDropdown)}
+          onMouseLeave={() => setActiveDropdown(null)}
+        >
+          <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start text-left">
+            
+            {activeDropdown === 'women' ? (
+              /* WOMEN MEGA MENU */
+              <>
+                {/* Column 1: Drapes & Silhouettes */}
+                <div className="lg:col-span-4 pl-4">
+                  <h4 className="text-[11px] font-bold tracking-[0.28em] text-[#B08D46] uppercase mb-6 flex items-center space-x-2">
+                    <span>DRAPES & SILHOUETTES</span>
+                  </h4>
+                  <ul className="space-y-3.5">
+                    {['Sarees', 'Lehenga', 'Bridal Lehenga'].map((item) => (
+                      <li key={item}>
+                        <button 
+                          onClick={() => handleCategoryClick(item)}
+                          className="group flex items-center space-x-2 text-stone-800 hover:text-[#641824] text-sm font-normal tracking-wide transition-all duration-200 hover:translate-x-2 cursor-pointer"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#B08D46] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                          <span className="transition-transform duration-200">{item}</span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 2: Everyday & Occasion */}
+                <div className="lg:col-span-4 pl-4">
+                  <h4 className="text-[11px] font-bold tracking-[0.28em] text-[#B08D46] uppercase mb-6">
+                    EVERYDAY & OCCASION
+                  </h4>
+                  <ul className="space-y-3.5">
+                    {['Suits', 'Kurtis', 'Festive Wear'].map((item) => (
+                      <li key={item}>
+                        <button 
+                          onClick={() => handleCategoryClick(item)}
+                          className="group flex items-center space-x-2 text-stone-800 hover:text-[#641824] text-sm font-normal tracking-wide transition-all duration-200 hover:translate-x-2 cursor-pointer"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#B08D46] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                          <span className="transition-transform duration-200">{item}</span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 3: The Bridal Edit Visual Banner */}
+                <div className="lg:col-span-4 flex justify-end">
+                  <div 
+                    onClick={() => handleCategoryClick('Bridal Lehenga')}
+                    className="relative w-full max-w-[380px] h-[195px] overflow-hidden group cursor-pointer shadow-md border border-[#E5DAC6]"
+                  >
+                    <img 
+                      src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" 
+                      alt="The Bridal Edit" 
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-5">
+                      <h3 className="font-serif-luxury text-2xl text-white font-normal tracking-tight group-hover:text-[#D4AF37] transition-colors duration-300">
+                        The Bridal Edit
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </>
+            ) : (
+              /* MEN MEGA MENU */
+              <>
+                {/* Column 1: Royal Silhouettes */}
+                <div className="lg:col-span-4 pl-4">
+                  <h4 className="text-[11px] font-bold tracking-[0.28em] text-[#B08D46] uppercase mb-6">
+                    HERITAGE & ROYAL SILHOUETTES
+                  </h4>
+                  <ul className="space-y-3.5">
+                    {["Groom's Sherwanis", 'Bespoke Bandhgalas', 'Indo-Western Sets'].map((item) => (
+                      <li key={item}>
+                        <button 
+                          onClick={() => handleCategoryClick(item)}
+                          className="group flex items-center space-x-2 text-stone-800 hover:text-[#641824] text-sm font-normal tracking-wide transition-all duration-200 hover:translate-x-2 cursor-pointer"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#B08D46] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                          <span className="transition-transform duration-200">{item}</span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 2: Modern Celebration */}
+                <div className="lg:col-span-4 pl-4">
+                  <h4 className="text-[11px] font-bold tracking-[0.28em] text-[#B08D46] uppercase mb-6">
+                    MODERN CELEBRATION
+                  </h4>
+                  <ul className="space-y-3.5">
+                    {['Kurta Pajama Sets', 'Nehru & Modi Jackets', 'Turban, Stole & Accessories'].map((item) => (
+                      <li key={item}>
+                        <button 
+                          onClick={() => handleCategoryClick(item)}
+                          className="group flex items-center space-x-2 text-stone-800 hover:text-[#641824] text-sm font-normal tracking-wide transition-all duration-200 hover:translate-x-2 cursor-pointer"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#B08D46] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                          <span className="transition-transform duration-200">{item}</span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 3: The Groom's Atelier Visual Banner */}
+                <div className="lg:col-span-4 flex justify-end">
+                  <div 
+                    onClick={() => handleCategoryClick("Groom's Sherwanis")}
+                    className="relative w-full max-w-[380px] h-[195px] overflow-hidden group cursor-pointer shadow-md border border-[#E5DAC6]"
+                  >
+                    <img 
+                      src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80" 
+                      alt="The Groom's Atelier" 
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-5">
+                      <h3 className="font-serif-luxury text-2xl text-white font-normal tracking-tight group-hover:text-[#D4AF37] transition-colors duration-300">
+                        The Groom's Atelier
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+
+          </div>
+        </div>
+      )}
+
     </nav>
   );
 }

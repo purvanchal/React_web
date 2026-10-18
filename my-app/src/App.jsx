@@ -13,17 +13,23 @@ import SocialShowcase from './components/SocialShowcase';
 import Testimonials from './components/Testimonials';
 import AboutPage from './components/AboutPage';
 import EnquiryPage from './components/EnquiryPage';
+import CategoryPage from './components/CategoryPage';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
+  const [selectedCategory, setSelectedCategory] = useState('Sarees');
 
   return (
     <div className="relative min-h-screen bg-[#2D0D12]">
       {/* 1. Header & Announcement Strip */}
       <TopAnnouncement />
-      <Navbar activePage={activePage} setActivePage={setActivePage} />
+      <Navbar 
+        activePage={activePage} 
+        setActivePage={setActivePage} 
+        setSelectedCategory={setSelectedCategory}
+      />
 
       <main>
         {activePage === 'about' ? (
@@ -32,10 +38,16 @@ export default function App() {
         ) : activePage === 'enquiry' ? (
           /* Dedicated Contact / Enquiry Page */
           <EnquiryPage />
+        ) : activePage === 'category' ? (
+          /* Dedicated Category Page (Sarees, Lehenga, etc.) */
+          <CategoryPage 
+            categoryName={selectedCategory} 
+            setActivePage={setActivePage} 
+          />
         ) : (
           /* Main Landing Page */
           <>
-            {/* 2. Hero Section (Bride background + main text) */}
+            {/* 2. Hero Section */}
             <HeroSection />
 
             {/* 3. Dark Marquee Strip */}
@@ -44,10 +56,10 @@ export default function App() {
             {/* 4. "Who We Are" Section */}
             <AboutSection />
 
-            {/* 5. Women's Collection (Sarees, Suits, Lehengas...) */}
+            {/* 5. Women's Collection */}
             <WomensCollection />
 
-            {/* 6. Split Editorial Banner (Made for Moments That Matter) */}
+            {/* 6. Split Editorial Banner */}
             <EditorialBanner />
 
             {/* 7. Featured Pieces Catalog with Prices */}
@@ -59,7 +71,7 @@ export default function App() {
             {/* 9. Light Cream Marquee Strip */}
             <LightTickerBanner />
 
-            {/* 10. Social Showcase (Instagram & YouTube) */}
+            {/* 10. Social Showcase */}
             <SocialShowcase />
 
             {/* 11. Customer Reviews Carousel */}
