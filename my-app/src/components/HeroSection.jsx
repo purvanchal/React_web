@@ -1,7 +1,14 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
-export default function HeroSection() {
+export default function HeroSection({ setActivePage }) {
+  const navigateTo = (page) => {
+    if (setActivePage) {
+      setActivePage(page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative w-full min-h-[calc(100vh-112px)] flex items-center justify-start overflow-hidden">
       
@@ -34,12 +41,18 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <button className="bg-[#C5A869] hover:bg-[#b89a5b] text-[#290B10] text-[11px] tracking-[0.2em] font-bold uppercase px-7 py-3.5 flex items-center space-x-3 transition group">
+            <button 
+              onClick={() => navigateTo('collections')}
+              className="bg-[#C5A869] hover:bg-[#b89a5b] text-[#290B10] text-[11px] tracking-[0.2em] font-bold uppercase px-7 py-3.5 flex items-center space-x-3 transition group cursor-pointer shadow-md"
+            >
               <span>Explore Collections</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 
-            <button className="border border-white/40 hover:border-white hover:bg-white/10 text-white text-[11px] tracking-[0.2em] font-medium uppercase px-7 py-3.5 transition">
+            <button 
+              onClick={() => navigateTo('enquiry')}
+              className="border border-white/40 hover:border-white hover:bg-white/10 text-white text-[11px] tracking-[0.2em] font-medium uppercase px-7 py-3.5 transition cursor-pointer"
+            >
               Contact Us
             </button>
           </div>

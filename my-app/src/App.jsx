@@ -54,8 +54,8 @@ export default function App() {
         ) : (
           /* Main Landing Page */
           <>
-            {/* 2. Hero Section */}
-            <HeroSection />
+            {/* 2. Hero Section with page navigation */}
+            <HeroSection setActivePage={setActivePage} />
 
             {/* 3. Dark Marquee Strip */}
             <TickerBanner />
