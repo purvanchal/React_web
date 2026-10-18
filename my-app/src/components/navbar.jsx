@@ -46,7 +46,7 @@ export default function Navbar({ activePage, setActivePage, setSelectedCategory 
               <img 
                 src={logo} 
                 alt="Purvanchal Collection Logo" 
-                className="w-[125%] h-[125%] max-w-[125%] object-contain"
+                className="w-[200%] h-[200%] max-w-[200%] object-contain"
                 onError={(e) => {
                   e.target.style.display = 'none';
                   if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
@@ -125,9 +125,11 @@ export default function Navbar({ activePage, setActivePage, setSelectedCategory 
           </div>
 
           <button
-            onClick={() => scrollToSection('collections')}
+            onClick={() => navigateTo('collections')}
             onMouseEnter={() => setActiveDropdown(null)}
-            className="hover:text-[#641824] transition uppercase cursor-pointer"
+            className={`transition uppercase cursor-pointer ${
+              activePage === 'collections' ? 'text-[#641824]' : 'hover:text-[#641824]'
+            }`}
           >
             Collections
           </button>

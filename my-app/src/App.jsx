@@ -13,6 +13,7 @@ import SocialShowcase from './components/SocialShowcase';
 import Testimonials from './components/Testimonials';
 import AboutPage from './components/AboutPage';
 import EnquiryPage from './components/EnquiryPage';
+import CollectionsPage from './components/CollectionsPage';
 import CategoryPage from './components/CategoryPage';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
@@ -38,8 +39,14 @@ export default function App() {
         ) : activePage === 'enquiry' ? (
           /* Dedicated Contact / Enquiry Page */
           <EnquiryPage />
+        ) : activePage === 'collections' ? (
+          /* Dedicated Collections Page */
+          <CollectionsPage 
+            setActivePage={setActivePage} 
+            setSelectedCategory={setSelectedCategory} 
+          />
         ) : activePage === 'category' ? (
-          /* Dedicated Category Page (Sarees, Lehenga, etc.) */
+          /* Sub-category Filter Page */
           <CategoryPage 
             categoryName={selectedCategory} 
             setActivePage={setActivePage} 
@@ -81,7 +88,10 @@ export default function App() {
       </main>
 
       {/* 12. Footer with Final CTA */}
-      <Footer setActivePage={setActivePage} />
+      <Footer 
+        setActivePage={setActivePage} 
+        setSelectedCategory={setSelectedCategory} 
+      />
 
       {/* 13. Floating Action Buttons (WhatsApp & Call) */}
       <FloatingButtons />

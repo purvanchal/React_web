@@ -2,12 +2,18 @@ import React from 'react';
 import { ArrowRight, Mail, Phone, Clock } from 'lucide-react';
 import logo from '../assets/logo.png';
 
-export default function Footer({ setActivePage }) {
+export default function Footer({ setActivePage, setSelectedCategory }) {
   const navigateTo = (page) => {
     if (setActivePage) {
       setActivePage(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const handleCategoryNav = (cat) => {
+    if (setSelectedCategory) setSelectedCategory(cat);
+    if (setActivePage) setActivePage('category');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -47,7 +53,7 @@ export default function Footer({ setActivePage }) {
                 <img 
                   src={logo} 
                   alt="Purvanchal Logo" 
-                  className="w-[125%] h-[125%] max-w-[125%] object-contain"
+                  className="w-[200%] h-[200%] max-w-[200%] object-contain"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     if (e.target.nextSibling) e.target.nextSibling.style.display = 'block';
@@ -123,14 +129,20 @@ export default function Footer({ setActivePage }) {
               </button>
             </li>
             <li>
-              <a href="#women" onClick={() => navigateTo('home')} className="hover:text-white transition flex items-center space-x-2">
+              <button 
+                onClick={() => handleCategoryNav('Lehenga')}
+                className="hover:text-white transition flex items-center space-x-2 cursor-pointer"
+              >
                 <span>—</span> <span>Women</span>
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#collections" onClick={() => navigateTo('home')} className="hover:text-white transition flex items-center space-x-2">
+              <button 
+                onClick={() => navigateTo('collections')}
+                className="hover:text-white transition flex items-center space-x-2 cursor-pointer"
+              >
                 <span>—</span> <span>Collections</span>
-              </a>
+              </button>
             </li>
             <li>
               <button 
