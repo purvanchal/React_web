@@ -40,7 +40,7 @@ const SHOWCASE_PHOTOS = [
   {
     id: 7,
     title: 'Outdoor Festive Lehenga',
-    src: 'https://images.unsplash.com/photo-1583391733975-08147d3c01bf?auto=format&fit=crop&w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
     span: 'col-span-1 row-span-1',
   },
   {
@@ -53,7 +53,7 @@ const SHOWCASE_PHOTOS = [
 
 export default function ShowcaseGallery() {
   return (
-    <section className="bg-[#1E090C] py-24 px-6 md:px-12 lg:px-16 border-t border-[#D8B467]/20">
+    <section className="bg-[#54151C] pt-24 pb-20 px-6 md:px-12 lg:px-16 -mb-px relative z-10">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header */}
@@ -86,6 +86,7 @@ export default function ShowcaseGallery() {
                 src={photo.src}
                 alt={photo.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-[#1E090C]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>

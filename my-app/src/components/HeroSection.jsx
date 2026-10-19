@@ -10,7 +10,7 @@ export default function HeroSection({ setActivePage }) {
   };
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-112px)] flex items-center justify-start overflow-hidden">
+    <section className="relative w-full min-h-[calc(100vh-112px)] flex items-center justify-start overflow-hidden bg-[#54151C]">
       
       {/* Background Image with Rich Maroon Gradient Overlay */}
       <div 
@@ -19,7 +19,7 @@ export default function HeroSection({ setActivePage }) {
           backgroundImage: `url('/hero-bridal.jpg')`
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#200508]/90 via-[#2E0B11]/70 to-[#1F070B]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#54151C]/90 via-[#54151C]/70 to-[#54151C]/40" />
       </div>
 
       {/* Main Content Area */}

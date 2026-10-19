@@ -61,13 +61,14 @@ export default function App() {
             <TickerBanner />
 
             {/* 4. "Who We Are" Section */}
-            <AboutSection />
+            <AboutSection setActivePage={setActivePage} />
 
             {/* 5. Women's Collection */}
             <WomensCollection />
 
             {/* 6. Split Editorial Banner */}
-            <EditorialBanner />
+            {/* In src/App.jsx */}
+            <EditorialBanner setActivePage={setActivePage} />
 
             {/* 7. Featured Pieces Catalog with Prices */}
             <FeaturedPieces />

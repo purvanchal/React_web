@@ -19,7 +19,14 @@ const FEATURES = [
   },
 ];
 
-export default function AboutSection() {
+export default function AboutSection({ setActivePage }) {
+  const handleDiscoverStory = () => {
+    if (setActivePage) {
+      setActivePage('about');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="bg-white py-24 px-6 md:px-12 lg:px-20 text-center">
       <div className="max-w-4xl mx-auto">
@@ -63,13 +70,13 @@ export default function AboutSection() {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <a
-            href="#story"
-            className="inline-flex items-center space-x-3 border border-[#641824] hover:bg-[#641824] text-[#641824] hover:text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.25em] uppercase transition duration-300 group"
+          <button
+            onClick={handleDiscoverStory}
+            className="inline-flex items-center space-x-3 border border-[#641824] hover:bg-[#641824] text-[#641824] hover:text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.25em] uppercase transition duration-300 group cursor-pointer"
           >
             <span>DISCOVER OUR STORY</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-          </a>
+          </button>
         </div>
       </div>
     </section>

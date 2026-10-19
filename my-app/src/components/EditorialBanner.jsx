@@ -1,7 +1,14 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
-export default function EditorialBanner() {
+export default function EditorialBanner({ setActivePage }) {
+  const handleViewCollections = () => {
+    if (setActivePage) {
+      setActivePage('collections');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="w-full bg-[#FAF7F2] pb-24 px-6 md:px-12 lg:px-16">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 overflow-hidden shadow-2xl">
@@ -50,13 +57,14 @@ export default function EditorialBanner() {
 
             {/* Gold CTA Button */}
             <div className="mt-9">
-              <a
-                href="#collections"
-                className="inline-flex items-center space-x-3 bg-[#B89758] hover:bg-[#a68648] text-[#290B10] px-8 py-3.5 text-[11px] font-bold tracking-[0.2em] uppercase transition duration-300 group shadow-md"
+              <button
+                type="button"
+                onClick={handleViewCollections}
+                className="inline-flex items-center space-x-3 bg-[#B89758] hover:bg-[#a68648] text-[#290B10] px-8 py-3.5 text-[11px] font-bold tracking-[0.2em] uppercase transition duration-300 group shadow-md cursor-pointer"
               >
                 <span>VIEW COLLECTIONS</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              </button>
             </div>
           </div>
 

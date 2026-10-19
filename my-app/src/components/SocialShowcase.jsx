@@ -84,7 +84,7 @@ export default function SocialShowcase() {
                 Purvanchal Collection
               </span>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@purvanchalcollectionprivat9031"
                 target="_blank"
                 rel="noreferrer"
                 className="border border-[#C5A869] text-[#E5C173] hover:bg-[#C5A869] hover:text-[#2E0B11] text-[10px] md:text-[11px] font-semibold tracking-[0.25em] uppercase px-6 py-3 transition duration-300"

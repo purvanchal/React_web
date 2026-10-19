@@ -17,7 +17,7 @@ export default function Footer({ setActivePage, setSelectedCategory }) {
   };
 
   return (
-    <footer className="bg-[#2A070D] text-white overflow-hidden relative border-t border-[#3F0E17]">
+    <footer className="bg-[#54151C] text-white overflow-hidden relative border-t border-[#3F0E17]">
       
       {/* 1. Upper CTA Section */}
       <div className="py-24 px-6 text-center max-w-4xl mx-auto border-b border-white/10">
@@ -93,7 +93,7 @@ export default function Footer({ setActivePage, setSelectedCategory }) {
             </a>
 
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@purvanchalcollectionprivat9031"
               target="_blank"
               rel="noreferrer"
               className="w-9 h-9 border border-white/20 hover:border-[#C5A869] flex items-center justify-center text-stone-300 hover:text-[#C5A869] transition"
