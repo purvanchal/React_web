@@ -247,7 +247,7 @@ export default function AboutPage({ setActivePage }) {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="https://maps.google.com/?q=12/4+Sarai+Faridabad+Haryana+121003"
+                href="https://www.google.com/maps/place/Purvanchal+Collection+Pvt.+Ltd+(+Sarai+Khwaja)/@28.4750259,77.3036621,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce7e8ef3ae515:0x95e665c2dd327136!8m2!3d28.4750212!4d77.306237!16s%2Fg%2F11w1qnrg6x?entry=ttu&g_ep=EgoyMDI2MTAxNC4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center space-x-2 bg-[#B89758] hover:bg-[#a68648] text-[#290B10] px-7 py-3 text-[11px] font-bold tracking-[0.2em] uppercase transition duration-300 shadow-md cursor-pointer"

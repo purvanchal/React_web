@@ -49,6 +49,14 @@ const PRODUCTS = [
     price: '₹14,500',
     image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
   },
+    {
+    id: 7,
+    tag: 'FEATURED',
+    category: 'FESTIVE WEAR',
+    title: 'Bandhani Celebration Set',
+    price: '₹14,500',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+  },
 ];
 
 export default function FeaturedPieces() {
