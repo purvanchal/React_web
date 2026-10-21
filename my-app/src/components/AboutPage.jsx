@@ -230,7 +230,7 @@ export default function AboutPage({ setActivePage }) {
       </section>
 
       {/* 6. Visit The Workshop Section */}
-      <section className="bg-[#420D14] text-white py-20 px-6 md:px-12 lg:px-20 border-t border-[#5A141E]">
+      <section className="bg-[#54151C] text-white py-20 px-6 md:px-12 lg:px-20 border-t border-[#5A141E]">
         <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Left Text & Actions */}

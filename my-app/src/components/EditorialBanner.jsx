@@ -74,3 +74,11 @@ export default function EditorialBanner({ setActivePage }) {
     </section>
   );
 }
+
+
+
+
+
+
+
+
