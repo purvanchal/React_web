@@ -198,7 +198,7 @@ export default function Footer({ setActivePage, setSelectedCategory }) {
                 href="mailto:Purvanchalcollections97@gmail.com"
                 className="hover:text-white transition break-all"
               >
-                Purvanchalcollections97@gmail.com
+                Purvanchalcollection9@gmail.com
               </a>
             </div>
 

@@ -10,9 +10,23 @@ export default function EnquiryPage() {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  const WHATSAPP_NUMBER = '917291912200';
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone) return;
+
+    // Build the formatted WhatsApp message
+    const message =
+      `*New Website Enquiry - Purvanchal Collection*%0A%0A` +
+      `*Name:* ${encodeURIComponent(formData.name)}%0A` +
+      `*Phone:* ${encodeURIComponent(formData.phone)}%0A` +
+      `*Email:* ${encodeURIComponent(formData.email || 'Not provided')}%0A` +
+      `*Requirement / Message:* ${encodeURIComponent(formData.message || 'Interested in bridal/ethnic collection')}`;
+
+    // Open WhatsApp in a new tab
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+
     setSubmitted(true);
   };
 
@@ -48,11 +62,18 @@ export default function EnquiryPage() {
             </p>
 
             {submitted ? (
-              <div className="p-8 bg-white border border-[#C5A869]/50 shadow-sm">
-                <p className="text-[#641824] font-serif-luxury text-2xl font-medium mb-2">Thank You for Reaching Out</p>
+              <div className="p-8 bg-white border border-[#C5A869]/50 shadow-sm space-y-3">
+                <p className="text-[#641824] font-serif-luxury text-2xl font-medium">Thank You for Reaching Out</p>
                 <p className="text-xs text-stone-600 leading-relaxed font-light">
-                  Your enquiry has been received. Our senior bridal consultant will contact you via phone/WhatsApp at <strong>{formData.phone}</strong> shortly.
+                  WhatsApp has opened with your inquiry details. Our senior bridal consultant will connect with you shortly.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="mt-3 inline-block text-[11px] font-semibold tracking-wider text-[#641824] uppercase underline cursor-pointer"
+                >
+                  Send another enquiry
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -61,7 +82,7 @@ export default function EnquiryPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[10px] tracking-[0.25em] uppercase font-bold text-stone-600 mb-2">
-                      NAME
+                      NAME *
                     </label>
                     <input
                       type="text"
@@ -75,7 +96,7 @@ export default function EnquiryPage() {
 
                   <div>
                     <label className="block text-[10px] tracking-[0.25em] uppercase font-bold text-stone-600 mb-2">
-                      PHONE NUMBER
+                      PHONE NUMBER *
                     </label>
                     <input
                       type="tel"
@@ -120,7 +141,7 @@ export default function EnquiryPage() {
                 <div>
                   <button
                     type="submit"
-                    className="bg-[#641824] hover:bg-[#4E121B] text-white text-[11px] font-semibold tracking-[0.25em] uppercase px-8 py-3.5 transition duration-300 shadow-sm"
+                    className="bg-[#641824] hover:bg-[#4E121B] text-white text-[11px] font-semibold tracking-[0.25em] uppercase px-8 py-3.5 transition duration-300 shadow-sm cursor-pointer"
                   >
                     SEND ENQUIRY
                   </button>
