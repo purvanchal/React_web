@@ -1,35 +1,37 @@
 import React from 'react';
+import AIMImg from '../assets/AIM.jpeg';
+import AIIMImg from '../assets/AIIM.jpeg';
 
 const CATEGORIES = [
   {
     id: 1,
     title: 'Sarees',
-    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
+    image: AIMImg,
   },
   {
     id: 2,
     title: 'Suits',
-    image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
+    image: AIIMImg,
   },
   {
     id: 3,
     title: 'Lehenga',
-    image: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80',
+    image: AIIMImg,
   },
   {
     id: 4,
     title: 'Bridal Lehenga',
-    image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80',
+    image: AIIMImg,
   },
   {
     id: 5,
     title: 'Kurtis',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
+    image: AIMImg,
   },
   {
     id: 6,
     title: 'Festive Wear',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+    image: AIIMImg,
   },
 ];
 

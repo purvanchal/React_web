@@ -61,7 +61,7 @@ export default function CollectionsPage({ setActivePage, setSelectedCategory }) 
     <div className="bg-[#FAF7F2] text-[#1E090C] min-h-screen">
       
       {/* 1. Header Banner */}
-      <section className="relative overflow-hidden bg-[#2D0D12] text-white py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-[#3F0E17]">
+      <section className="relative overflow-hidden bg-[#54151C] text-white py-24 md:py-32 px-6 md:px-12 lg:px-20 border-b border-[#3F0E17]">
         <div className="absolute inset-0 z-0 opacity-25">
           <img
             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=80"

@@ -1,52 +1,54 @@
 import React from 'react';
+import AIMImg from '../assets/AIM.jpeg';
+import AIIMImg from '../assets/AIIM.jpeg';
 
 const SHOWCASE_PHOTOS = [
   {
     id: 1,
     title: 'Bride and Groom Celebration',
-    src: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
+    src: AIMImg,
     span: 'col-span-1 row-span-1',
   },
   {
     id: 2,
     title: 'Heritage Couple Portrait',
-    src: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
+    src: AIIMImg,
     span: 'col-span-1 row-span-1',
   },
   {
     id: 3,
     title: 'Bridal Jewelry Portrait',
-    src: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80',
+    src: AIMImg,
     span: 'col-span-1 row-span-1',
   },
   {
     id: 4,
     title: 'Golden Veil Detail',
-    src: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
+    src: AIIMImg,
     span: 'col-span-1 row-span-1',
   },
   {
     id: 5,
     title: 'Crimson Lehenga Intricacy',
-    src: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80',
+    src: AIMImg,
     span: 'col-span-1 row-span-1',
   },
   {
     id: 6,
     title: 'Mathapatti Close-up',
-    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+    src: AIIMImg,
     span: 'col-span-1 row-span-1',
   },
   {
     id: 7,
     title: 'Outdoor Festive Lehenga',
-    src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    src: AIIMImg,
     span: 'col-span-1 row-span-1',
   },
   {
     id: 8,
     title: 'Sunset Editorial Portrait',
-    src: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80',
+    src: AIMImg,
     span: 'col-span-1 row-span-1',
   },
 ];

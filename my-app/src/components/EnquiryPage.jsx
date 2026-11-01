@@ -34,7 +34,7 @@ export default function EnquiryPage() {
     <div className="bg-[#FAF7F2] min-h-screen text-[#1E090C]">
       
       {/* 1. Maroon Header Banner */}
-      <section className="bg-[#420D14] text-white py-20 px-6 md:px-12 lg:px-20 border-b border-[#5A141E]">
+      <section className="bg-[#54151C] text-white py-20 px-6 md:px-12 lg:px-20 border-b border-[#5A141E]">
         <div className="max-w-[1300px] mx-auto text-left">
           <p className="text-[11px] md:text-[12px] uppercase tracking-[0.35em] text-[#C5A869] font-medium mb-3">
             CONTACT US
@@ -101,7 +101,7 @@ export default function EnquiryPage() {
                     <input
                       type="tel"
                       required
-                      placeholder="72919 12200"
+                      placeholder="XXXX-XXX-XXXX  "
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-white border border-stone-300 px-4 py-3 text-xs md:text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-[#641824] transition"

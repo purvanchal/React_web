@@ -1,4 +1,6 @@
 import React from 'react';
+import AIMImg from '../assets/AIM.jpeg';
+import AIIMImg from '../assets/AIIM.jpeg';
 
 const PRODUCTS = [
   {
@@ -7,7 +9,7 @@ const PRODUCTS = [
     category: 'SAREES',
     title: 'Banarasi Crimson Silk Saree',
     price: '₹18,500',
-    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
+    image: AIMImg,
   },
   {
     id: 2,
@@ -15,7 +17,7 @@ const PRODUCTS = [
     category: 'LEHENGAS',
     title: 'Sangeet Shimmer Lehenga',
     price: '₹32,000',
-    image: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80',
+    image: AIIMImg,
   },
   {
     id: 3,
@@ -23,7 +25,7 @@ const PRODUCTS = [
     category: 'BRIDAL LEHENGAS',
     title: 'Crimson Bridal Lehenga',
     price: '₹68,000',
-    image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80',
+    image: AIIMImg,
   },
   {
     id: 4,
@@ -31,7 +33,7 @@ const PRODUCTS = [
     category: 'SUITS',
     title: 'Anarkali Regal Suit',
     price: '₹16,500',
-    image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
+    image: AIMImg,
   },
   {
     id: 5,
@@ -39,7 +41,7 @@ const PRODUCTS = [
     category: 'KURTIS',
     title: 'Chikankari Hand Kurti',
     price: '₹3,200',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
+    image: AIIMImg,
   },
   {
     id: 6,
@@ -47,7 +49,7 @@ const PRODUCTS = [
     category: 'FESTIVE WEAR',
     title: 'Bandhani Celebration Set',
     price: '₹14,500',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+    image: AIMImg,
   },
     {
     id: 7,
@@ -55,7 +57,7 @@ const PRODUCTS = [
     category: 'FESTIVE WEAR',
     title: 'Bandhani Celebration Set',
     price: '₹14,500',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+    image: AIIMImg,
   },
 ];
 

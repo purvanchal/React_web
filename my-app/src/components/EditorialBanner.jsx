@@ -1,5 +1,8 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import AIMImg from '../assets/AIM.jpeg';
+import AIIMImg from '../assets/AIIM.jpeg';
+
 
 export default function EditorialBanner({ setActivePage }) {
   const handleViewCollections = () => {
@@ -16,7 +19,7 @@ export default function EditorialBanner({ setActivePage }) {
         {/* Left Side: Boutique Model Photo */}
         <div className="relative min-h-[460px] lg:min-h-[580px] bg-stone-900 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1400&q=85"
+            src={AIIMImg}
             alt="Editorial Collection"
             className="w-full h-full object-cover object-center"
           />
@@ -74,11 +77,3 @@ export default function EditorialBanner({ setActivePage }) {
     </section>
   );
 }
-
-
-
-
-
-
-
-

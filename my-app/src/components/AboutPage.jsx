@@ -7,6 +7,7 @@ import biaImg from '../assets/BIA.jpeg';
 import tlsImg from '../assets/TLS.jpeg';
 import bibImg from '../assets/BIB.jpeg';
 import rlaImg from '../assets/RLA.jpeg';
+import AIMImg from '../assets/AIM.jpeg';
 
 const AWARDS = [
   {
@@ -15,7 +16,7 @@ const AWARDS = [
     recipient: 'MR. ALOK KUMAR',
     role: 'DIRECTOR',
     imgPlaceholder: 'Business Icon Award 2024 — Mr. Alok Kumar, Director',
-    image: biaImg ,
+    image: biaImg,
   },
   {
     id: 2,
@@ -118,11 +119,11 @@ export default function AboutPage({ setActivePage }) {
             </p>
           </div>
 
-          {/* Right Runway Model Photo */}
+          {/* Right Showcase Photo */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[420px] aspect-[3/4] overflow-hidden shadow-2xl bg-[#EBE1D0]">
               <img
-                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=85"
+                src={AIMImg}
                 alt="Purvanchal Runway Heritage"
                 className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
               />

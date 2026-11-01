@@ -1,4 +1,6 @@
 import React from 'react';
+import AIMImg from '../assets/AIM.jpeg';
+import AIIMImg from '../assets/AIIM.jpeg';
 
 // Lightweight brand icon SVGs
 function InstagramIcon({ className = "w-5 h-5" }) {
@@ -20,12 +22,12 @@ function YoutubeIcon({ className = "w-5 h-5" }) {
 }
 
 const FEED_IMAGES = [
-  'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1583391733975-08147d3c01bf?auto=format&fit=crop&w=600&q=80',
+  AIMImg,
+  AIIMImg,
+  AIMImg,
+  AIIMImg,
+  AIMImg,
+  AIIMImg,
 ];
 
 export default function SocialShowcase() {
@@ -54,7 +56,7 @@ export default function SocialShowcase() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="relative aspect-[16/10] overflow-hidden bg-stone-900 group">
             <img
-              src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1200&q=85"
+              src={AIMImg}
               alt="Purvanchal Instagram"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
@@ -75,7 +77,7 @@ export default function SocialShowcase() {
 
           <div className="relative aspect-[16/10] overflow-hidden bg-stone-900 group">
             <img
-              src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=85"
+              src={AIIMImg}
               alt="Purvanchal YouTube"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
